@@ -1,0 +1,10 @@
+const router = require("express").Router(),
+homeController = require("../controllers/homeController");
+
+//router.use(expressValidator());
+router.use(homeController.logRequestPaths);
+
+router.get("/", homeController.index);
+router.get("/contact", homeController.getSubscriptionPage);
+
+module.exports = router; 
